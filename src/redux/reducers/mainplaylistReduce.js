@@ -1,34 +1,33 @@
-import { GET_ARTIST, GET_ROCK, GET_POP } from "../actions";
+import { GET_ARTIST_ONE } from "../actions";
+import { GET_ARTIST_TWO } from "../actions";
+import { GET_ARTIST_THREE } from "../actions";
 
-const initialstate = {
-  content: [],
-  contentRock: [],
-  contentPop: [],
+const initialState = {
+  contentone: [],
+  contenttwo: [],
+  contentthree: [],
 };
 
-const mainplaylistReduce = (state = initialstate, action) => {
+const mainplaylistReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_ARTIST:
+    case GET_ARTIST_ONE:
       return {
         ...state,
-        content: action.payload,
+        contentone: action.payload,
       };
-    case GET_ROCK:
+    case GET_ARTIST_TWO:
       return {
         ...state,
-        contentRock: state.content.filter(
-          (item) => item.name === action.payload
-        ),
+        contenttwo: action.payload,
       };
-    case GET_POP:
+    case GET_ARTIST_THREE:
       return {
         ...state,
-        contentPop: action.payload,
+        contentthree: action.payload,
       };
-
     default:
       return state;
   }
 };
 
-export default mainplaylistReduce;
+export default mainplaylistReducer;

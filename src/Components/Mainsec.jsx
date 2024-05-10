@@ -1,17 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_ARTIST, GET_ROCK, fillMusicSection } from "../redux/actions";
+import {
+  fillMusicSection,
+  fillMusicSectionthree,
+  fillMusicSectiontwo,
+} from "../redux/actions";
 
 function Mainsec() {
-  const artists = useSelector((state) => state.artist.content);
   const dispatch = useDispatch();
+  const artistDataOne = useSelector((state) => state.artist.contentone);
+  const artistDataTwo = useSelector((state) => state.artist.contenttwo);
+  const artistDataThree = useSelector((state) => state.artist.contentthree);
 
   useEffect(() => {
-    dispatch(fillMusicSection("acdc"));
-    dispatch({ type: GET_ROCK, payload: "green day" });
+    dispatch(fillMusicSection("eminem"));
+    dispatch(fillMusicSectiontwo("queen"));
+    dispatch(fillMusicSectionthree("katy perry"));
   }, []);
-
-  console.log(artists);
+  console.log(artistDataOne);
+  console.log(artistDataTwo);
+  console.log(artistDataThree);
 
   return (
     <main class="col-12 col-md-9 offset-md-3 mainPage">
