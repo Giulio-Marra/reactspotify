@@ -118,7 +118,7 @@ ul {
   color: #282828 !important;
 }
 
-.progressBar {
+.progress {
   color: white;
   background-color: #414141;
   height: 3px;
@@ -134,9 +134,8 @@ ul {
 /*MAIN PAGE SECTION*/
 
 .mainLinks {
-  
+  margin-top: 1.5rem;
   justify-content: space-evenly;
-  margin-top: 1.5em;
 }
 
 .mainLinks a {
